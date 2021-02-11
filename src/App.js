@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import { WeatherContext } from "./contexts/WeatherContext";
 
 function App() {
-  const [cityInput, setCityInput] = useState("");
+  const [cityInput, setCityInput] = useState(null);
   const [currentData, setCurrentData] = useState(null);
   const [dailyData, setDailyData] = useState(null);
 
-  function getWeather() {
+  function getWeather(city) {
     fetch(
-      `https://api.openweathermap.org/data/2.5/forecast?q=${cityInput}&appid=${process.env.REACT_APP_API_KEY}`
+      `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${process.env.REACT_APP_API_KEY}`
     )
       .then((res) => res.json())
       .then((data) => {
