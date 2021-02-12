@@ -4,7 +4,7 @@ import HomePage from "./pages/HomePage";
 import { WeatherContext } from "./contexts/WeatherContext";
 
 function App() {
-  const [cityInput, setCityInput] = useState(null);
+  const [cityInput, setCityInput] = useState("");
   const [currentData, setCurrentData] = useState(null);
   const [dailyData, setDailyData] = useState(null);
 
@@ -15,9 +15,8 @@ function App() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-
         setCurrentData(data.list[0]);
-
+        localStorage.setItem("cityName", city);
         setDailyData(
           data.list.filter((item) => {
             return item.dt_txt.includes("12:00:00");

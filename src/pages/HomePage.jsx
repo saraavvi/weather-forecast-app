@@ -1,15 +1,11 @@
 import React, { useContext, useEffect } from "react";
 import moment from "moment";
-import DailyCard from "../components/DailyCard";
 import { WeatherContext } from "../contexts/WeatherContext";
 import SearchForm from "../components/SearchForm";
 import styled from "styled-components";
 import "weather-icons/css/weather-icons.css";
-
-const Card = styled.div`
-  text-align: center;
-  color: white;
-`;
+import MainCard from "../components/MainCard";
+import DailyCardContainer from "../components/DailyCardContainer";
 
 export default function HomePage() {
   const { currentData, dailyData, getWeather } = useContext(WeatherContext);
@@ -33,45 +29,27 @@ export default function HomePage() {
   }
 
   return (
-    <div className="container">
+    <div className="container-fluid vh-100 d-flex flex-column">
       <div className="row">
         <div className="col-md-12 d-flex justify-content-center">
           <SearchForm />
         </div>
       </div>
-      <div className="row mt-5">
+
+      <div className="row mt-5 pt-2">
         <div className="col-md-12 d-flex justify-content-center">
-          {currentData && (
-            <Card>
-              {console.log(currentData)}
-              <h1>Overcast</h1>
-              <h2>{localStorage.getItem("cityName")}</h2>
-              <i className="wi wi-day-sunny display-1"></i>
-              <h3>{kToC(currentData.main.temp)}°C</h3>
-              <h3>{currentData.weather[0].main}</h3>
-            </Card>
-          )}
+          {currentData && <MainCard kToC={kToC} />}
+          {console.log(currentData)}
         </div>
+        {/* <div className="col-md-4">{currentData && <DetailsCard />}</div> */}
       </div>
-      <div className="row mt-5 p-5">
+
+      <div className="row flex-grow-1 align-items-center pt-2">
         <div className="col-md-12 d-flex justify-content-center">
           {dailyData && (
-            <>
-              {dailyData.slice(1).map((item, index) => {
-                const weekday = dateToDay(item.dt_txt);
-                const temp = kToC(item.main.temp);
-                const weather = item.weather[0].main;
-                return (
-                  <DailyCard
-                    key={index}
-                    weekday={weekday}
-                    temp={temp}
-                    weather={weather}
-                  />
-                );
-              })}
-            </>
+            <DailyCardContainer kToC={kToC} dateToDay={dateToDay} />
           )}
+          {console.log(dailyData)}
         </div>
       </div>
     </div>
