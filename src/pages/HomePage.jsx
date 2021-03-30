@@ -2,10 +2,10 @@ import React, { useContext, useEffect } from "react";
 import moment from "moment";
 import { WeatherContext } from "../contexts/WeatherContext";
 import SearchForm from "../components/SearchForm";
-import styled from "styled-components";
 import "weather-icons/css/weather-icons.css";
 import MainCard from "../components/MainCard";
 import DailyCardContainer from "../components/DailyCardContainer";
+import InfoText from "../components/InfoText";
 
 export default function HomePage() {
   const { currentData, dailyData, getWeather } = useContext(WeatherContext);
@@ -27,31 +27,44 @@ export default function HomePage() {
     let weekday = moment(date).format("dddd");
     return weekday;
   }
+  if (localStorage.getItem("cityName")) {
+    return (
+      <div className="container-fluid vh-100 d-flex flex-column">
+        <div className="row">
+          <div className="col-md-12 d-flex justify-content-center">
+            <SearchForm />
+          </div>
+        </div>
 
-  return (
-    <div className="container-fluid vh-100 d-flex flex-column">
-      <div className="row">
-        <div className="col-md-12 d-flex justify-content-center">
-          <SearchForm />
+        <div className="row mt-5 pt-2">
+          <div className="col-md-12 d-flex justify-content-center">
+            {currentData && <MainCard kToC={kToC} />}
+            {console.log(currentData)}
+          </div>
+        </div>
+
+        <div className="row flex-grow-1 align-items-center pt-2">
+          <div className="col-md-12 d-flex justify-content-center">
+            {dailyData && (
+              <DailyCardContainer kToC={kToC} dateToDay={dateToDay} />
+            )}
+            {console.log(dailyData)}
+          </div>
         </div>
       </div>
-
-      <div className="row mt-5 pt-2">
-        <div className="col-md-12 d-flex justify-content-center">
-          {currentData && <MainCard kToC={kToC} />}
-          {console.log(currentData)}
-        </div>
-        {/* <div className="col-md-4">{currentData && <DetailsCard />}</div> */}
-      </div>
-
-      <div className="row flex-grow-1 align-items-center pt-2">
-        <div className="col-md-12 d-flex justify-content-center">
-          {dailyData && (
-            <DailyCardContainer kToC={kToC} dateToDay={dateToDay} />
-          )}
-          {console.log(dailyData)}
+    );
+  } else {
+    return (
+      <div className="container-fluid vh-100 d-flex flex-column">
+        <div className="row m-auto">
+          <div className="col-md-12 d-flex justify-content-center">
+            <InfoText />
+          </div>
+          <div className="col-md-12 d-flex justify-content-center">
+            <SearchForm />
+          </div>
         </div>
       </div>
-    </div>
-  );
+    )
+  }
 }

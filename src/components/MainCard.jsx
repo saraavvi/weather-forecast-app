@@ -27,12 +27,9 @@ const DetailContainer = styled.div`
 
 export default function MainCard({ kToC }) {
   const { currentData } = useContext(WeatherContext);
-
   const weather = currentData.weather[0].main;
   const temp = kToC(currentData.main.temp);
   const feelsLike = kToC(currentData.main.feels_like);
-  const max = kToC(currentData.main.temp_max);
-  const min = kToC(currentData.main.temp_min);
   const weatherDescription = currentData.weather[0].description;
   const windSpeed = currentData.wind.speed;
   const humidity = currentData.main.humidity;
@@ -41,37 +38,27 @@ export default function MainCard({ kToC }) {
     <Card>
       <div>
         <h1>{localStorage.getItem("cityName")}</h1>
+        <h3>{weatherDescription}</h3>
         <i className={`${icon[weather]} display-1`}></i>
         <h2>{temp}°C</h2>
-        <h3>{weatherDescription}</h3>
       </div>
       <div className="d-flex">
         <DetailContainer>
           <i className="wi wi-strong-wind"></i>
           <div>
             <p>Wind Speed</p>
-            {windSpeed}
+            {windSpeed} m/s
           </div>
         </DetailContainer>
         <DetailContainer>
           <i className="wi wi-humidity"></i>
           <p>Humidity</p>
-          {humidity}
+          {humidity}%
         </DetailContainer>
         <DetailContainer>
           <i className="wi wi-thermometer"></i>
           <p>Feels Like</p>
-          <p>{feelsLike}</p>
-        </DetailContainer>
-        <DetailContainer>
-          <i className="wi wi-direction-up"></i>
-          <p>Highest</p>
-          <p>{max}</p>
-        </DetailContainer>
-        <DetailContainer>
-          <i className="wi wi-direction-down"></i>
-          <p>Lowest</p>
-          <p>{min}</p>
+          <p>{feelsLike}°C</p>
         </DetailContainer>
       </div>
     </Card>

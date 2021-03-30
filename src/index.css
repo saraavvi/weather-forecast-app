@@ -1,10 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap");
 
 body {
-  background-image: url(https://images.pexels.com/photos/851151/pexels-photo-851151.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
-  background-size: cover;
   background-repeat: no-repeat;
-
+  background-image: linear-gradient(180deg, #053a76 0%, #77aae4 50%, #fdbb2d 100% );
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -21,7 +19,8 @@ html body {
   font-family: "Noto Sans KR", sans-serif;
   width: 100%;
   height: 100%;
-  backdrop-filter: blur(10px);
+  background-color: #fdbb2d;
+  backdrop-filter: blur(50px);
 }
 
 code {

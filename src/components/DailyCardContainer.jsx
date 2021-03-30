@@ -1,11 +1,9 @@
 import React, { useContext } from "react";
 import { WeatherContext } from "../contexts/WeatherContext";
 import DailyCard from "../components/DailyCard";
-import styled from "styled-components";
 
 export default function DailyCardContainer({ kToC, dateToDay }) {
   const { dailyData } = useContext(WeatherContext);
-
   return (
     <>
       {dailyData.map((item, index) => {

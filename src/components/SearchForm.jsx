@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import { WeatherContext } from "../contexts/WeatherContext";
 import styled from "styled-components";
 
+
+
 const StyledForm = styled.form`
   input {
     width: 100%;
@@ -20,12 +22,6 @@ const StyledForm = styled.form`
   }
 `;
 
-// const SearchButton = styled.button`
-//   color: white;
-//   background-color: black;
-//   border: none;
-// `;
-
 const FormContainer = styled.div`
   margin-top: 2rem;
   width: 50%;
@@ -40,7 +36,6 @@ export default function SearchForm() {
 
   function handleOnSubmit(e) {
     e.preventDefault();
-    // localStorage.setItem("cityName", cityInput);
     getWeather(cityInput);
     setCityInput("");
   }
@@ -54,7 +49,6 @@ export default function SearchForm() {
           type="text"
           placeholder="Type the name of a city and press enter"
         ></input>
-        {/* <SearchButton type="submit">Search</SearchButton> */}
       </StyledForm>
     </FormContainer>
   );

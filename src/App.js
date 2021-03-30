@@ -17,16 +17,19 @@ function App() {
         console.log(data);
         setCurrentData(data.list[0]);
         localStorage.setItem("cityName", city);
+        const daily = data.list.filter((item) => {
+          return item.dt_txt.includes("12:00:00");
+        })
+        daily.shift()
         setDailyData(
-          data.list.filter((item) => {
-            return item.dt_txt.includes("12:00:00");
-          })
+          daily
         );
       })
       .catch((err) => alert("City does not exist"));
   }
 
   return (
+
     <div>
       <WeatherContext.Provider
         value={{
