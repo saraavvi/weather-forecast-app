@@ -10,3 +10,4 @@ this is a weather forecast app where you can search for a city to get a 5 days f
 
 ## view it live
 
+https://saraavvi.github.io/weather-forecast-app/
