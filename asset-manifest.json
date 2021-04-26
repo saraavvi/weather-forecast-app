@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/weather-forecast-app/static/css/main.3162695e.chunk.css",
-    "main.js": "/weather-forecast-app/static/js/main.af15c9bb.chunk.js",
-    "main.js.map": "/weather-forecast-app/static/js/main.af15c9bb.chunk.js.map",
+    "main.css": "/weather-forecast-app/static/css/main.da2906e0.chunk.css",
+    "main.js": "/weather-forecast-app/static/js/main.5dccfa16.chunk.js",
+    "main.js.map": "/weather-forecast-app/static/js/main.5dccfa16.chunk.js.map",
     "runtime-main.js": "/weather-forecast-app/static/js/runtime-main.0d31b37d.js",
     "runtime-main.js.map": "/weather-forecast-app/static/js/runtime-main.0d31b37d.js.map",
     "static/css/2.3043386b.chunk.css": "/weather-forecast-app/static/css/2.3043386b.chunk.css",
-    "static/js/2.ce141567.chunk.js": "/weather-forecast-app/static/js/2.ce141567.chunk.js",
-    "static/js/2.ce141567.chunk.js.map": "/weather-forecast-app/static/js/2.ce141567.chunk.js.map",
+    "static/js/2.417ebe01.chunk.js": "/weather-forecast-app/static/js/2.417ebe01.chunk.js",
+    "static/js/2.417ebe01.chunk.js.map": "/weather-forecast-app/static/js/2.417ebe01.chunk.js.map",
     "static/js/3.d3bec7a0.chunk.js": "/weather-forecast-app/static/js/3.d3bec7a0.chunk.js",
     "static/js/3.d3bec7a0.chunk.js.map": "/weather-forecast-app/static/js/3.d3bec7a0.chunk.js.map",
     "index.html": "/weather-forecast-app/index.html",
     "static/css/2.3043386b.chunk.css.map": "/weather-forecast-app/static/css/2.3043386b.chunk.css.map",
-    "static/css/main.3162695e.chunk.css.map": "/weather-forecast-app/static/css/main.3162695e.chunk.css.map",
-    "static/js/2.ce141567.chunk.js.LICENSE.txt": "/weather-forecast-app/static/js/2.ce141567.chunk.js.LICENSE.txt",
+    "static/css/main.da2906e0.chunk.css.map": "/weather-forecast-app/static/css/main.da2906e0.chunk.css.map",
+    "static/js/2.417ebe01.chunk.js.LICENSE.txt": "/weather-forecast-app/static/js/2.417ebe01.chunk.js.LICENSE.txt",
     "static/media/weather-icons.css": "/weather-forecast-app/static/media/weathericons-regular-webfont.e218aee6.woff2"
   },
   "entrypoints": [
     "static/js/runtime-main.0d31b37d.js",
     "static/css/2.3043386b.chunk.css",
-    "static/js/2.ce141567.chunk.js",
-    "static/css/main.3162695e.chunk.css",
-    "static/js/main.af15c9bb.chunk.js"
+    "static/js/2.417ebe01.chunk.js",
+    "static/css/main.da2906e0.chunk.css",
+    "static/js/main.5dccfa16.chunk.js"
   ]
 }
