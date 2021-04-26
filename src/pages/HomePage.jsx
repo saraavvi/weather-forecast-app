@@ -39,7 +39,6 @@ export default function HomePage() {
         <div className="row mt-5 pt-2">
           <div className="col-md-12 d-flex justify-content-center">
             {currentData && <MainCard kToC={kToC} />}
-            {console.log(currentData)}
           </div>
         </div>
 
@@ -48,7 +47,6 @@ export default function HomePage() {
             {dailyData && (
               <DailyCardContainer kToC={kToC} dateToDay={dateToDay} />
             )}
-            {console.log(dailyData)}
           </div>
         </div>
       </div>

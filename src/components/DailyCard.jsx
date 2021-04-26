@@ -4,7 +4,8 @@ import styled from "styled-components";
 
 const Card = styled.div`
   text-align: center;
-  //   padding: 2rem;
+  // padding: 2rem;
+  width: 100%;
   color: white;
   //   border: 1px solid white;
   p {

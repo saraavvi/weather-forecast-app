@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Route, Switch } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import { WeatherContext } from "./contexts/WeatherContext";
@@ -14,13 +14,11 @@ function App() {
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setCurrentData(data.list[0]);
         localStorage.setItem("cityName", city);
         const daily = data.list.filter((item) => {
           return item.dt_txt.includes("12:00:00");
         })
-        daily.shift()
         setDailyData(
           daily
         );
